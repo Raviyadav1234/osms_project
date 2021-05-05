@@ -23,19 +23,20 @@
 
 <body>
   <!-- Start Navigation -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-danger pl-5 fixed-top">
+  <nav class="navbar navbar-expand-sm navbar-dark pl-5 fixed-top bg-secondary" style="background: green;">
     <a href="index.php" class="navbar-brand">OSMS</a>
     <span class="navbar-text">Customer's Happiness is our Aim</span>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="myMenu">
-      <ul class="navbar-nav pl-5 custom-nav">
-        <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#Services" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="#registration" class="nav-link">Registration</a></li>
-        <li class="nav-item"><a href="Requester/RequesterLogin.php" class="nav-link">Login</a></li>
-        <li class="nav-item"><a href="#Contact" class="nav-link">Contact</a></li>
+    <div class="collapse navbar-collapse" id="myMenu" style="margin-left: 300px;">
+      <ul class="navbar-nav pl-4 custom-nav" >
+        <li class="nav-item pl-4"><a href="index.php" class="nav-link">Home</a></li>
+        <li class="nav-item pl-4"><a href="#Contact" class="nav-link">Contact</a></li>
+        <li class="nav-item pl-4"><a href="#Services" class="nav-link">Services</a></li>
+        <li class="nav-item pl-4"><a href="#registration" class="nav-link">Registration</a></li>
+        <li class="nav-item pl-4"><a href="Requester/RequesterLogin.php" class="nav-link">Login</a></li>
+        
       </ul>
     </div>
   </nav> <!-- End Navigation -->
@@ -99,7 +100,7 @@
   <!-- End Registration  -->
 
   <!-- Start Happy Customer  -->
-  <div class="jumbotron bg-danger" id="Customer">
+  <div class="jumbotron bg-secondary" id="Customer">
     <!-- Start Happy Customer Jumbotron -->
     <div class="container">
       <!-- Start Customer Container -->

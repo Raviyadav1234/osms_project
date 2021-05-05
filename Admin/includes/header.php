@@ -21,7 +21,7 @@
 
 <body>
  <!-- Top Navbar -->
- <nav class="navbar navbar-dark fixed-top bg-danger p-0 shadow">
+ <nav class="navbar navbar-dark fixed-top bg-secondary p-0 shadow">
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.php">OSMS</a>
  </nav>
 
