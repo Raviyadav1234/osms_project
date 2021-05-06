@@ -20,10 +20,17 @@ if($_SESSION['is_login']){
   </form>
   <?php
   if(isset($_REQUEST['checkid'])){
+
+    //Checkink Id for assignwork_tb
     $sql = "SELECT * FROM assignwork_tb WHERE request_id = {$_REQUEST['checkid']}";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    if(($row['request_id']) == $_REQUEST['checkid']){ ?>
+
+    //Checking Id for submitrequest_tb
+     $sql1 = "SELECT * FROM submitrequest_tb WHERE request_id = {$_REQUEST['checkid']}";
+    $result1 = $conn->query($sql1);
+    $row1 = $result1->fetch_assoc();
+    if((@$row['request_id']) == $_REQUEST['checkid']){ ?>
   <h3 class="text-center mt-5">Assigned Work Details</h3>
   <table class="table table-bordered">
     <tbody>
@@ -101,7 +108,9 @@ if($_SESSION['is_login']){
       </tr>
       <tr>
         <td>Technician Name</td>
-        <td>Zahir Khan</td>
+        <td>
+          <?php if(isset($row['assign_tech'])) {echo $row['assign_tech']; } ?>
+        </td>
       </tr>
       <tr>
         <td>Customer Sign</td>
@@ -117,10 +126,15 @@ if($_SESSION['is_login']){
     <form class="d-print-none d-inline mr-3"><input class="btn btn-danger" type="submit" value="Print" onClick="window.print()"></form>
     <form class="d-print-none d-inline" action="work.php"><input class="btn btn-secondary" type="submit" value="Close"></form>
   </div>
-  <?php } else {
+  <?php } elseif(@$row1['request_id'] !== $_REQUEST['checkid'] and @$row['request_id'] !== $_REQUEST['checkid']) {
+      echo '<div class="alert alert-warning mt-4" role="alert">
+      Please Enter a Valid Request Id </div>';
+    }else{
       echo '<div class="alert alert-dark mt-4" role="alert">
-      Your Request is Still Pending </div>';
+      Your Request is Still Pendind </div>';
     }
+
+
  }
  ?>
 
