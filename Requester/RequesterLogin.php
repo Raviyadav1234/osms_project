@@ -1,16 +1,17 @@
 <?php
-include('../dbConnection.php');
+require_once '../dbConnection.php';
+
 session_start();
 if(!isset($_SESSION['is_login'])){
-  if(isset($_REQUEST['rEmail'])){
-    $rEmail = mysqli_real_escape_string($conn,trim($_REQUEST['rEmail']));
-    $rPassword = mysqli_real_escape_string($conn,trim($_REQUEST['rPassword']));
-    $sql = "SELECT r_email, r_password FROM requesterlogin_tb WHERE r_email='".$rEmail."' AND r_password='".$rPassword."' limit 1";
-    $result = $conn->query($sql);
-    if($result->num_rows == 1){
+  if(isset($_POST['u_email'])){
+    $u_email = mysqli_real_escape_string($conn,trim($_POST['u_email']));
+    $u_password = mysqli_real_escape_string($conn,trim($_POST['u_password']));
+    $sql = "SELECT user_email, user_password FROM tbl_userlogin WHERE user_email='".$u_email."' AND user_password='".$u_password."' limit 1";
+    $result = mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result) == 1){
       
       $_SESSION['is_login'] = true;
-      $_SESSION['rEmail'] = $rEmail;
+      $_SESSION['u_email'] = $u_email;
       // Redirecting to RequesterProfile page on Correct Email and Pass
       echo "<script> location.href='RequesterProfile.php'; </script>";
       exit;
@@ -59,15 +60,15 @@ if(!isset($_SESSION['is_login'])){
         <form action="" class="shadow-lg p-4" method="POST">
           <div class="form-group">
             <i class="fas fa-user"></i><label for="email" class="pl-2 font-weight-bold">Email</label><input type="email"
-              class="form-control" placeholder="Email" name="rEmail">
+              class="form-control" placeholder="Email" name="u_email">
             <!--Add text-white below if want text color white-->
             <small class="form-text">We'll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
             <i class="fas fa-key"></i><label for="pass" class="pl-2 font-weight-bold">Password</label><input type="password"
-              class="form-control" placeholder="Password" name="rPassword">
+              class="form-control" placeholder="Password" name="u_password">
           </div>
-          <button type="submit" class="btn btn-outline-danger mt-3 btn-block shadow-sm font-weight-bold">Login</button>
+          <button type="submit" class="btn btn-outline-success mt-3 btn-block shadow-sm font-weight-bold">Login</button>
           <?php if(isset($msg)) {echo $msg; } ?>
         </form>
         <div class="text-center"><a class="btn btn-info mt-3 shadow-sm font-weight-bold" href="../index.php">Back

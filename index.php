@@ -19,102 +19,168 @@
   <link rel="stylesheet" href="css/custom.css">
 
   <title>OSMS</title>
+
+  <style type="text/css">
+    .desc{
+      color: white;
+       position: fixed;
+       top: 235px;
+       left: 560px;
+    }
+  </style>
 </head>
 
 <body>
   <!-- Start Navigation -->
-  <nav class="navbar navbar-expand-sm navbar-dark pl-5 fixed-top bg-secondary" style="background: green;">
-    <a href="index.php" class="navbar-brand">OSMS</a>
-    <span class="navbar-text">Customer's Happiness is our Aim</span>
+  <nav  class="navbar navbar-expand-sm navbar-dark fixed-top bg-secondary">
+    <a href="index.php" class="navbar-brand"><img src="images/logo.png"></a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="myMenu" style="margin-left: 300px;">
-      <ul class="navbar-nav pl-4 custom-nav" >
-        <li class="nav-item pl-4"><a href="index.php" class="nav-link">Home</a></li>
-        <li class="nav-item pl-4"><a href="#Contact" class="nav-link">Contact</a></li>
-        <li class="nav-item pl-4"><a href="#Services" class="nav-link">Services</a></li>
-        <li class="nav-item pl-4"><a href="#registration" class="nav-link">Registration</a></li>
-        <li class="nav-item pl-4"><a href="Requester/RequesterLogin.php" class="nav-link">Login</a></li>
+    <div class="collapse navbar-collapse"  id="myMenu" >
+      <ul class="navbar-nav custom-nav ml-auto" >
+        <li class="nav-item ml-4"><a href="index.php" class="nav-link">Home</a></li>
+        <li class="nav-item ml-4"><a href="#about_us" class="nav-link">About us</a></li>
+        <li class="nav-item ml-4"><a href="#services" class="nav-link">Services</a></li>
+        <li class="nav-item ml-4"><a href="#customer" class="nav-link">Gallery</a></li>
+
+        <li class="nav-item ml-4"><a href="#contact" class="nav-link">Contact</a></li>
+        
+        <li class="nav-item ml-4"><a href="Requester/userregistration.php" class="nav-link">Registration</a></li>
+        <li class="nav-item ml-4"><a href="Requester/RequesterLogin.php" class="nav-link">Login</a></li>
         
       </ul>
     </div>
   </nav> <!-- End Navigation -->
 
   <!-- Start Header Jumbotron-->
-  <header class="jumbotron back-image" style="background-image: url(images/Banner1.jpeg);">
-    <div class="myclass mainHeading">
+ 
+    <header>
+   <!--  <div class="myclass mainHeading">
       <h1 class="text-uppercase text-danger font-weight-bold">Welcome to OSMS</h1>
       <p class="font-italic">Customer's Happiness is our Aim</p>
       <a href="Requester/RequesterLogin.php" class="btn btn-success mr-4">Login</a>
       <a href="#registration" class="btn btn-danger mr-4">Sign Up</a>
+    </div> -->
+
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="images/slide1.jpg" alt="First slide">
+
+      <div class="carousel-caption d-none d-md-block">
+    <a href="index.php"><p class="desc" style=" font-size: 80px;">Home</p></a>
+    <h5>nv;jvdivdncnscnsci</h5>
+    <p>CSvdfxkn;nknkn</p>
     </div>
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/slide2.jpg" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <a href="#Contact"><p class="desc" style=" font-size: 80px;">Contact</p></a>
+    <h5>nv;jvdivdncnscnsci</h5>
+    <p>CSvdfxkn;nknkn</p>
+    </div>
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/slide3.jpg" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+        <a href="#Services"><p class="desc" style=" font-size: 80px;">Services</p></a>
+    <h5>nv;jvdivdncnscnsci</h5>
+    <p>CSvdfxkn;nknkn</p>
+    </div>
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/slide4.jpg" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+    <a href="Requester/userregistration.php"><p class="desc" style=" font-size: 80px;">Register</p></a>
+    <h5>nv;jvdivdncnscnsci</h5>
+    <p>CSvdfxkn;nknkn</p>
+    </div>
+    </div>
+
+    <div class="carousel-item">
+      <img class="d-block w-100" src="images/slide5.jpg" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+        <a href="Requester/RequesterLogin.php"><p class="desc" style=" font-size: 80px;">Login</p></a>
+    <h5>nv;jvdivdncnscnsci</h5>
+    <p>CSvdfxkn;nknkn</p>
+    </div>
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
   </header> <!-- End Header Jumbotron -->
 
-  <div class="container">
+  <div class="container" id="about_us">
     <!--Introduction Section-->
     <div class="jumbotron">
-      <h3 class="text-center">OSMS Services</h3>
+      <h3 class="text-center">About Us</h3>
       <p>
-        OSMS Services is India’s leading chain of multi-brand Electronics and Electrical service
-        workshops offering
-        wide array of services. We focus on enhancing your uses experience by offering world-class
-        Electronic
-        Appliances maintenance services. Our sole mission is “To provide Electronic Appliances care
-        services to
-        keep the devices fit and healthy and customers happy and smiling”.
-
-        With well-equipped Electronic Appliances service centres and fully trained mechanics, we
-        provide quality
-        services with excellent packages that are designed to offer you great savings.
-
-        Our state-of-art workshops are conveniently located in many cities across the country. Now you
-        can book
-        your service online by doing Registration.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
       </p>
 
     </div>
   </div>
   <!--Introduction Section End-->
   <!-- Start Services -->
-  <div class="container text-center border-bottom" id="Services">
+  <div class="container text-center border-bottom" id="services">
     <h2>Our Services</h2>
     <div class="row mt-4">
-      <div class="col-sm-4 mb-4">
-        <a href="#"><i class="fas fa-tv fa-8x text-success"></i></a>
-        <h4 class="mt-4">Electronic Appliances</h4>
+      <div class="col-sm-3 mb-4">
+        <a href="#"><i class="fas fa-cogs fa-8x text-secondary"></i></a>
+        <h4 class="mt-4">Fault Maintinance</h4>
       </div>
-      <div class="col-sm-4 mb-4">
-        <a href="#"><i class="fas fa-sliders-h fa-8x text-primary"></i></a>
+      <div class="col-sm-3 mb-4">
+        <a href="#"><i class="fas fa-mobile fa-8x text-secondary"></i></a>
+        <h4 class="mt-4">Software Mantinance</h4>
+      </div><div class="col-sm-3 mb-4">
+        <a href="#"><i class="fas fa-laptop fa-8x text-secondary"></i></a>
+        <h4 class="mt-4">Software Mantinance</h4>
+      </div>
+      <div class="col-sm-3 mb-4">
+        <a href="#"><i class="fas fa-sliders-h fa-8x text-secondary"></i></a>
         <h4 class="mt-4">Preventive Maintenance</h4>
       </div>
-      <div class="col-sm-4 mb-4">
-        <a href="#"><i class="fas fa-cogs fa-8x text-info"></i></a>
-        <h4 class="mt-4">Fault Repair</h4>
-      </div>
+      
     </div>
   </div> <!-- End Services -->
 
-  <!-- Start Registration  -->
-  <?php include('userRegistration.php') ?>
-  <!-- End Registration  -->
-
   <!-- Start Happy Customer  -->
-  <div class="jumbotron bg-secondary" id="Customer">
+  <div style="background: #bdbdbd ;" class="jumbotron" id="customer">
     <!-- Start Happy Customer Jumbotron -->
     <div class="container">
       <!-- Start Customer Container -->
-      <h2 class="text-center text-white">Happy Customers</h2>
+      <h2 class="text-center text-black">Our Customers</h2>
       <div class="row mt-5">
         <div class="col-lg-3 col-sm-6">
           <!-- Start Customer 1st Column-->
           <div class="card shadow-lg mb-2">
             <div class="card-body text-center">
-              <img src="images/avtar1.jpeg" class="img-fluid" style="border-radius: 100px;">
-              <h4 class="card-title">Rahul Kumar</h4>
-              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad
-                ducimus voluptas
-                nesciunt debitis numquam.</p>
+              <img src="images/1.jpg" class="img-fluid" style="border-radius: 100px;">
+              <h4 class="card-title">Rohit Kumar</h4>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
             </div>
           </div>
         </div> <!-- End Customer 1st Column-->
@@ -123,11 +189,9 @@
           <!-- Start Customer 2nd Column-->
           <div class="card shadow-lg mb-2">
             <div class="card-body text-center">
-              <img src="images/avtar2.jpeg" class="img-fluid" style="border-radius: 100px;">
-              <h4 class="card-title">Sonam Sharma</h4>
-              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad
-                ducimus voluptas
-                nesciunt debitis numquam.</p>
+              <img src="images/2.jpg" class="img-fluid" style="border-radius: 100px;">
+              <h4 class="card-title">Pooja Yadav</h4>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
             </div>
           </div>
         </div> <!-- End Customer 2nd Column-->
@@ -136,11 +200,9 @@
           <!-- Start Customer 3rd Column-->
           <div class="card shadow-lg mb-2">
             <div class="card-body text-center">
-              <img src="images/avtar3.jpeg" class="img-fluid" style="border-radius: 100px;">
-              <h4 class="card-title">Sumit Vyas</h4>
-              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad
-                ducimus voluptas
-                nesciunt debitis numquam.</p>
+              <img src="images/3.jpg" class="img-fluid" style="border-radius: 100px;">
+              <h4 class="card-title">Ritika Yadav</h4>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
             </div>
           </div>
         </div> <!-- End Customer 3rd Column-->
@@ -149,11 +211,9 @@
           <!-- Start Customer 4th Column-->
           <div class="card shadow-lg mb-2">
             <div class="card-body text-center">
-              <img src="images/avtar4.jpeg" class="img-fluid" style="border-radius: 100px;">
-              <h4 class="card-title">Jyoti Sinha</h4>
-              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad
-                ducimus voluptas
-                nesciunt debitis numquam.</p>
+              <img src="images/4.jpg" class="img-fluid" style="border-radius: 100px;">
+              <h4 class="card-title">Manoj Sinha</h4>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
             </div>
           </div>
         </div> <!-- End Customer 4th Column-->
@@ -162,9 +222,9 @@
   </div> <!-- End Customer Jumbotron -->
 
   <!--Start Contact Us-->
-  <div class="container" id="Contact">
+  <div class="container" id="contact">
     <!--Start Contact Us Container-->
-    <h2 class="text-center mb-4">Contact US</h2> <!-- Contact Us Heading -->
+    <h2 class="text-center mb-4">Contact Us</h2> <!-- Contact Us Heading -->
     <div class="row">
 
       <!--Start Contact Us Row-->
@@ -174,18 +234,18 @@
       <div class="col-md-4 text-center">
         <!-- Start Contact Us 2nd Column-->
         <strong>Headquarter:</strong> <br>
-        OSMS Pvt Ltd, <br>
-        Sec IV, Bokaro <br>
-        Jharkhand - 834005 <br>
-        Phone: +00000000 <br>
+        O.S.M.S. Pvt. Ltd., <br>
+        Sector-41, Noida <br>
+        Uttar Pradesh - 110096 <br>
+        Phone: +91-7982600726 <br>
         <a href="#" target="_blank">www.osms.com</a> <br>
 
         <br><br>
-        <strong>Delhi Branch:</strong> <br>
-        OSMS Pvt Ltd, <br>
-        Ashok Nagar, Delhi <br>
-        Delhi - 804002 <br>
-        Phone: +00000000 <br>
+        <strong>Lucknow Branch:</strong> <br>
+        O.S.M.S. Pvt. Ltd., <br>
+        Vikas Nagar, Lucknow <br>
+        Lucknow - 266001 <br>
+        Phone: +91-7982600726 <br>
         <a href="#" target="_blank">www.osms.com</a> <br>
       </div> <!-- End Contact Us 2nd Column-->
     </div> <!-- End Contact Us Row-->
@@ -193,30 +253,88 @@
   <!-- End Contact Us -->
 
   <!-- Start Footer-->
-  <footer class="container-fluid bg-dark text-white mt-5" style="border-top: 3px solid #DC3545;">
-    <div class="container">
-      <!-- Start Footer Container -->
-      <div class="row py-3">
-        <!-- Start Footer Row -->
-        <div class="col-md-6">
-          <!-- Start Footer 1st Column -->
-          <span class="pr-2">Follow Us: </span>
-          <a href="#" target="_blank" class="pr-2 fi-color"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" target="_blank" class="pr-2 fi-color"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank" class="pr-2 fi-color"><i class="fab fa-youtube"></i></a>
-          <a href="#" target="_blank" class="pr-2 fi-color"><i class="fab fa-google-plus-g"></i></a>
-          <a href="#" target="_blank" class="pr-2 fi-color"><i class="fas fa-rss"></i></a>
-        </div> <!-- End Footer 1st Column -->
+   
+<footer style="color: white; text-decoration: none;" class="footer bg-dark">
+<div class="container">
+<div class="row">
+<div class=" col-sm-3">
+<h4 style="color: white;" class="mt-4 mb-3">Find us</h4>
+<!--headin5_amrc-->
+<p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+<p><i class="fa fa-location-arrow"></i>Sector-41, Noida, Uttar Pradesh  </p>
+<p><i class="fa fa-phone"></i>  +91-7982600726 <br>&nbsp;&nbsp;&nbsp;&nbsp; +91-9616255454  </p>
+<p><i class="fa fa-envelope"></i> raviyadav2017sln@gmail.com  </p>
+</div>
 
-        <div class="col-md-6 text-right">
-          <!-- Start Footer 2nd Column -->
-          <small> Designed by Someone &copy; 2018.
-          </small>
-          <small class="ml-2"><a href="Admin/login.php">Admin Login</a></small>
-        </div> <!-- End Footer 2nd Column -->
-      </div> <!-- End Footer Row -->
-    </div> <!-- End Footer Container -->
-  </footer> <!-- End Footer -->
+<div class=" col-sm-3">
+<h4 style="color: white; margin-left: 38px; " class="mt-4 mb-3">Quick links</h4>
+<!--headin5_amrc-->
+<ul style=" list-style-type:none; " class="">
+<li><a class="color" href="http://webenlance.com">Image Rectoucing</a></li>
+<li><a class="color" href="http://webenlance.com">Clipping Path</a></li>
+<li><a class="color" href="http://webenlance.com">Hollow Man Montage</a></li>
+<li><a class="color" href="http://webenlance.com">Ebay & Amazon</a></li>
+<li><a class="color" href="http://webenlance.com">Hair Masking/Clipping</a></li>
+<li><a class="color" href="http://webenlance.com">Image Cropping</a></li>
+</ul>
+<!--footer_ul_amrc ends here-->
+</div>
+
+
+<div class=" col-sm-3">
+<h4 style="color: white;margin-left: 38px;" class="mt-4 mb-3">Quick links</h4>
+<!--headin5_amrc-->
+<ul style="list-style-type: none; " class="">
+<li><a class="color" href="http://webenlance.com">Remove Background</a></li>
+<li><a class="color" href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+<li><a class="color" href="http://webenlance.com">Logo Design</a></li>
+<li><a class="color" href="http://webenlance.com">Vectorization</a></li>
+<li><a class="color" href="http://webenlance.com">Hair Masking/Clipping</a></li>
+<li><a class="color" href="http://webenlance.com">Image Cropping</a></li>
+</ul>
+<!--footer_ul_amrc ends here-->
+</div>
+
+<div class=" col-sm-3">
+<h4 style="color: white;margin-left: 38px;" class="mt-4 mb-3">Follow us</h4>
+<!--headin5_amrc ends here-->
+
+<ul style=" list-style-type:none;" class="">
+<li><a href="#"><i class="fab fa-twitter float-left mr-3 color"></i> </a><p><a class="color" href="https://www.twitter.com/" target="_blank">www.twitter.com</a></p></li>
+<li><a href="#"><i class="fab fa-facebook-f float-left mr-3 color"></i> </a><p><a class="color" href="https://www.facebook.com/" target="_blank">www.facebook.com</a></p></li>
+<li><a href="#"><i class="fab fa-instagram float-left mr-3 color"></i> </a><p><a class="color" href="https://www.instagram.com/" target="_blank">www.instagra.com</a></p></li>
+<li><a href="#"><i class="fab fa-linkedin float-left mr-3 color"></i> </a><p><a class="color" href="https://www.linkdin.com/" target="_blank">www.linkdin.com</a></p></li>
+</ul>
+<!--footer_ul2_amrc ends here-->
+</div>
+</div>
+</div>
+
+
+<div class="container">
+<ul class="footer_menu">
+<li><a href="index.php">Home</a></li>
+<li><a href="#about_us">About us</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#customer">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="Requester/userregistration.php">Registration</a></li>
+<li><a href="Requester/RequesterLogin.php">Login</a></li>
+</ul>
+<!--foote_bottom_ul_amrc ends here-->
+<p class="text-center">Copyright @2021 | Designed by Ravi Yadav 
+
+<ul class="social_footer_ul">
+<li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://www.linkdin.com/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+</ul>
+<!--social_footer_ul ends here-->
+</div>
+
+</footer>
+  <!-- End Footer -->
 
   <!-- Boostrap JavaScript -->
   <script src="js/jquery.min.js"></script>

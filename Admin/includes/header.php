@@ -22,13 +22,14 @@
 <body>
  <!-- Top Navbar -->
  <nav class="navbar navbar-dark fixed-top bg-secondary p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.php">OSMS</a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.php"><img src="../images/logo.png"></a>
  </nav>
 
  <!-- Side Bar -->
  <div class="container-fluid mb-5" style="margin-top:40px;">
   <div class="row">
    <nav class="col-sm-3 col-md-2 bg-light sidebar py-5 d-print-none">
+    <img src="../images/admin_pic.jpeg" class="ml-5" style="border-radius: 50%;">
     <div class="sidebar-sticky">
      <ul class="nav flex-column">
       <li class="nav-item">

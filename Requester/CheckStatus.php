@@ -1,11 +1,12 @@
 <?php
 define('TITLE', 'Status');
 define('PAGE', 'CheckStatus');
-include('includes/header.php'); 
-include('../dbConnection.php');
+require_once __DIR__.'/includes/header.php';
+require_once '../dbConnection.php';
+
 session_start();
 if($_SESSION['is_login']){
- $rEmail = $_SESSION['rEmail'];
+ $u_email = $_SESSION['u_email'];
 } else {
  echo "<script> location.href='RequesterLogin.php'; </script>";
 }
@@ -20,16 +21,17 @@ if($_SESSION['is_login']){
   </form>
   <?php
   if(isset($_REQUEST['checkid'])){
-
+  $checkid = $_REQUEST['checkid'];
     //Checkink Id for assignwork_tb
-    $sql = "SELECT * FROM assignwork_tb WHERE request_id = {$_REQUEST['checkid']}";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
+    $sql = "SELECT * FROM tbl_assignwork WHERE request_id = {$checkid}";
+    //$result = $conn->query($sql);
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
 
     //Checking Id for submitrequest_tb
-     $sql1 = "SELECT * FROM submitrequest_tb WHERE request_id = {$_REQUEST['checkid']}";
-    $result1 = $conn->query($sql1);
-    $row1 = $result1->fetch_assoc();
+     $sql1 = "SELECT * FROM tbl_submitrequest WHERE request_id = {$checkid}";
+    $result1 = mysqli_query($conn,$sql1);
+    $row1 = mysqli_fetch_assoc($result1);
     if((@$row['request_id']) == $_REQUEST['checkid']){ ?>
   <h3 class="text-center mt-5">Assigned Work Details</h3>
   <table class="table table-bordered">
@@ -85,7 +87,7 @@ if($_SESSION['is_login']){
       <tr>
         <td>Pin Code</td>
         <td>
-          <?php if(isset($row['requester_zip'])) {echo $row['requester_zip']; } ?>
+          <?php if(isset($row['requester_pin'])) {echo $row['requester_pin']; } ?>
         </td>
       </tr>
       <tr>

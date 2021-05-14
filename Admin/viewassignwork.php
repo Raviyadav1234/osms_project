@@ -1,8 +1,9 @@
 <?php
 define('TITLE', 'Work Order');
 define('PAGE', 'work');
-include('includes/header.php'); 
-include('../dbConnection.php');
+require_once __DIR__.'/includes/header.php';
+require_once '../dbConnection.php';
+
 session_start();
  if(isset($_SESSION['is_adminlogin'])){
   $aEmail = $_SESSION['aEmail'];
@@ -15,9 +16,11 @@ session_start();
  <h3 class="text-center">Assigned Work Details</h3>
  <?php
  if(isset($_REQUEST['view'])){
-  $sql = "SELECT * FROM assignwork_tb WHERE request_id = {$_REQUEST['id']}";
- $result = $conn->query($sql);
- $row = $result->fetch_assoc();
+  $request_id = $_REQUEST['id'];
+
+  $sql = "SELECT * FROM tbl_assignwork WHERE request_id = {$request_id}";
+ $result = mysqli_query($conn,$sql);
+ $row = mysqli_fetch_assoc($result);
  }
  ?>
  <table class="table table-bordered">
@@ -73,7 +76,7 @@ session_start();
    <tr>
     <td>Pin Code</td>
     <td>
-     <?php if(isset($row['requester_zip'])) {echo $row['requester_zip']; }?>
+     <?php if(isset($row['requester_pin'])) {echo $row['requester_pin']; }?>
     </td>
    </tr>
    <tr>

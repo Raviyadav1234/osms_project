@@ -1,8 +1,8 @@
 <?php
 session_start();
 define('TITLE', 'Success');
-include('includes/header.php'); 
-include('../dbConnection.php');
+require_once __DIR__.'/includes/header.php';
+require_once '../dbConnection.php';
 
  if(isset($_SESSION['is_adminlogin'])){
   $aEmail = $_SESSION['aEmail'];
@@ -10,45 +10,45 @@ include('../dbConnection.php');
   echo "<script> location.href='login.php'; </script>";
  }
 
-$sql = "SELECT * FROM customer_tb WHERE custid = {$_SESSION['myid']}";
-$result = $conn->query($sql);
-if($result->num_rows == 1){
- $row = $result->fetch_assoc();
+$sql = "SELECT * FROM tbl_customer WHERE customer_id = {$_SESSION['myid']}";
+$result = mysqli_query($conn,$sql);
+if(mysqli_num_rows($result) == 1){ 
+ $row = mysqli_fetch_assoc($result);
  echo "<div class='ml-5 mt-5'>
  <h3 class='text-center'>Customer Bill</h3>
  <table class='table'>
   <tbody>
   <tr>
     <th>Customer ID</th>
-    <td>".$row['custid']."</td>
+    <td>".$row['customer_id']."</td>
   </tr>
    <tr>
      <th>Customer Name</th>
-     <td>".$row['custname']."</td>
+     <td>".$row['customer_name']."</td>
    </tr>
    <tr>
      <th>Address</th>
-     <td>".$row['custadd']."</td>
+     <td>".$row['customer_address']."</td>
    </tr>
    <tr>
    <th>Product</th>
-   <td>".$row['cpname']."</td>
+   <td>".$row['customer_product_name']."</td>
   </tr>
    <tr>
     <th>Quantity</th>
-    <td>".$row['cpquantity']."</td>
+    <td>".$row['customer_product_quantity']."</td>
    </tr>
    <tr>
     <th>Price Each</th>
-    <td>".$row['cpeach']."</td>
+    <td>".$row['customer_product_each']."</td>
    </tr>
    <tr>
     <th>Total Cost</th>
-    <td>".$row['cptotal']."</td>
+    <td>".$row['customer_product_total']."</td>
    </tr>
    <tr>
    <th>Date</th>
-   <td>".$row['cpdate']."</td>
+   <td>".$row['customer_product_date']."</td>
   </tr>
    <tr>
     <td><form class='d-print-none'><input class='btn btn-danger' type='submit' value='Print' onClick='window.print()'></form></td>
@@ -65,5 +65,5 @@ if($result->num_rows == 1){
 
 <?php
 include('includes/footer.php'); 
-$conn->close();
+mysqli_close($conn);
 ?>

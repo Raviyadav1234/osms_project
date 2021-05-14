@@ -1,8 +1,9 @@
 <?php    
 define('TITLE', 'Update Requester');
 define('PAGE', 'requesters');
-include('includes/header.php'); 
-include('../dbConnection.php');
+require_once __DIR__.'/includes/header.php';
+require_once '../dbConnection.php';
+
 session_start();
  if(isset($_SESSION['is_adminlogin'])){
   $aEmail = $_SESSION['aEmail'];
@@ -12,17 +13,18 @@ session_start();
  // update
  if(isset($_REQUEST['requpdate'])){
   // Checking for Empty Fields
-  if(($_REQUEST['r_login_id'] == "") || ($_REQUEST['r_name'] == "") || ($_REQUEST['r_email'] == "")){
+  if(($_REQUEST['user_id'] == "") || ($_REQUEST['user_name'] == "") || ($_REQUEST['user_email'] == "")){
    // msg displayed if required field missing
    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> Fill All Fileds </div>';
   } else {
     // Assigning User Values to Variable
-    $rid = $_REQUEST['r_login_id'];
-    $rname = $_REQUEST['r_name'];
-    $remail = $_REQUEST['r_email'];
+   $user_id = $_REQUEST['user_id'];
+   $user_name = $_REQUEST['user_name'];
+   $user_email = $_REQUEST['user_email'];
 
-  $sql = "UPDATE requesterlogin_tb SET r_login_id = '$rid', r_name = '$rname', r_email = '$remail' WHERE r_login_id = '$rid'";
-    if($conn->query($sql) == TRUE){
+
+  $sql = "UPDATE tbl_userlogin SET user_id = '$user_id', user_name = '$user_name', user_email = '$user_email' WHERE user_id = '$user_id'";
+    if(mysqli_query($conn,$sql) == TRUE){
      // below msg display on form submit success
      $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Updated Successfully </div>';
     } else {
@@ -36,27 +38,27 @@ session_start();
   <h3 class="text-center">Update Requester Details</h3>
   <?php
  if(isset($_REQUEST['view'])){
-  $sql = "SELECT * FROM requesterlogin_tb WHERE r_login_id = {$_REQUEST['id']}";
- $result = $conn->query($sql);
- $row = $result->fetch_assoc();
+  $sql = "SELECT * FROM tbl_userlogin WHERE user_id = {$_REQUEST['id']}";
+ $result = mysqli_query($conn,$sql);
+ $row = mysqli_fetch_assoc($result);
  }
  ?>
   <form action="" method="POST">
     <div class="form-group">
       <label for="r_login_id">Requester ID</label>
-      <input type="text" class="form-control" id="r_login_id" name="r_login_id" value="<?php if(isset($row['r_login_id'])) {echo $row['r_login_id']; }?>">
+      <input type="text" class="form-control" id="r_login_id" readonly name="user_id" value="<?php if(isset($row['user_id'])) {echo $row['user_id']; }?>">
     </div>
     <div class="form-group">
       <label for="r_name">Name</label>
-      <input type="text" class="form-control" id="r_name" name="r_name" value="<?php if(isset($row['r_name'])) {echo $row['r_name']; }?>">
+      <input type="text" class="form-control" id="r_name" name="user_name" value="<?php if(isset($row['user_name'])) {echo $row['user_name']; }?>">
     </div>
     <div class="form-group">
       <label for="r_email">Email</label>
-      <input type="text" class="form-control" id="r_email" name="r_email" value="<?php if(isset($row['r_email'])) {echo $row['r_email']; }?>">
+      <input type="text" class="form-control" id="r_email" name="user_email" value="<?php if(isset($row['user_email'])) {echo $row['user_email']; }?>">
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-danger" id="requpdate" name="requpdate">Update</button>
+      <button type="submit" class="btn btn-danger" id="req_update" name="requpdate">Update</button>
       <a href="requester.php" class="btn btn-secondary">Close</a>
     </div>
     <?php if(isset($msg)) {echo $msg; } ?>

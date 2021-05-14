@@ -1,8 +1,9 @@
 <?php
 define('TITLE', 'Work Report');
 define('PAGE', 'workreport');
-include('includes/header.php');
-include('../dbConnection.php'); 
+require_once __DIR__.'/includes/header.php';
+require_once '../dbConnection.php';
+
 session_start();
  if(isset($_SESSION['is_adminlogin'])){
   $aEmail = $_SESSION['aEmail'];
@@ -14,23 +15,23 @@ session_start();
   <form action="" method="POST" class="d-print-none">
     <div class="form-row">
       <div class="form-group col-md-2">
-        <input type="date" class="form-control" id="startdate" name="startdate">
+        <input type="date" class="form-control" id="startdate" name="start_date">
       </div> <span> to </span>
       <div class="form-group col-md-2">
-        <input type="date" class="form-control" id="enddate" name="enddate">
+        <input type="date" class="form-control" id="enddate" name="end_date">
       </div>
       <div class="form-group">
-        <input type="submit" class="btn btn-secondary" name="searchsubmit" value="Search">
+        <input type="submit" class="btn btn-secondary" name="search_submit" value="Search">
       </div>
     </div>
   </form>
   <?php
- if(isset($_REQUEST['searchsubmit'])){
-    $startdate = $_REQUEST['startdate'];
-    $enddate = $_REQUEST['enddate'];
-    $sql = "SELECT * FROM assignwork_tb WHERE assign_date BETWEEN '$startdate' AND '$enddate'";
-    $result = $conn->query($sql);
-    if($result->num_rows > 0){
+ if(isset($_REQUEST['search_submit'])){
+    $start_date = $_REQUEST['start_date'];
+    $end_date = $_REQUEST['end_date'];
+    $sql = "SELECT * FROM tbl_assignwork WHERE assign_date BETWEEN '$start_date' AND '$end_date'";
+    $result = mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result) > 0){
      echo '
   <p class=" bg-dark text-white p-2 mt-4">Details</p>
   <table class="table">
@@ -47,7 +48,7 @@ session_start();
     </tr>
   </thead>
   <tbody>';
-  while($row = $result->fetch_assoc()){
+  while($row = mysqli_fetch_assoc($result)){
     echo '<tr>
     <th scope="row">'.$row["request_id"].'</th>
     <td>'.$row["request_info"].'</td>

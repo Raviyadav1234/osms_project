@@ -1,4 +1,7 @@
-<?php    
+<?php
+require_once __DIR__.'/includes/header.php';
+require_once '../dbConnection.php';
+
 if(session_id() == '') {
   session_start();
 }
@@ -8,34 +11,34 @@ if(isset($_SESSION['is_adminlogin'])){
  echo "<script> location.href='login.php'; </script>";
 }
  if(isset($_REQUEST['view'])){
-  $sql = "SELECT * FROM submitrequest_tb WHERE request_id = {$_REQUEST['id']}";
- $result = $conn->query($sql);
- $row = $result->fetch_assoc();
+  $sql = "SELECT * FROM tbl_submitrequest WHERE request_id = {$_REQUEST['id']}";
+ $result = mysqli_query($conn,$sql);
+ $row = mysqli_fetch_assoc($result);
  }
 
  //  Assign work Order Request Data going to submit and save on db assignwork_tb table
  if(isset($_REQUEST['assign'])){
   // Checking for Empty Fields
-  if(($_REQUEST['request_id'] == "") || ($_REQUEST['request_info'] == "") || ($_REQUEST['requestdesc'] == "") || ($_REQUEST['requestername'] == "") || ($_REQUEST['address1'] == "") || ($_REQUEST['address2'] == "") || ($_REQUEST['requestercity'] == "") || ($_REQUEST['requesterstate'] == "") || ($_REQUEST['requesterzip'] == "") || ($_REQUEST['requesteremail'] == "") || ($_REQUEST['requestermobile'] == "") || ($_REQUEST['assigntech'] == "") || ($_REQUEST['inputdate'] == "")){
+  if(($_REQUEST['request_id'] == "") || ($_REQUEST['request_info'] == "") || ($_REQUEST['request_desc'] == "") || ($_REQUEST['requester_name'] == "") || ($_REQUEST['requester_add1'] == "") || ($_REQUEST['requester_add2'] == "") || ($_REQUEST['requester_city'] == "") || ($_REQUEST['requester_state'] == "") || ($_REQUEST['requester_pin'] == "") || ($_REQUEST['requester_email'] == "") || ($_REQUEST['requester_mobile'] == "") || ($_REQUEST['assigntech'] == "") || ($_REQUEST['assigndate'] == "")){
    // msg displayed if required field missing
    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> Fill All Fileds </div>';
   } else {
     // Assigning User Values to Variable
-    $rid = $_REQUEST['request_id'];
-    $rinfo = $_REQUEST['request_info'];
-    $rdesc = $_REQUEST['requestdesc'];
-    $rname = $_REQUEST['requestername'];
-    $radd1 = $_REQUEST['address1'];
-    $radd2 = $_REQUEST['address2'];
-    $rcity = $_REQUEST['requestercity'];
-    $rstate = $_REQUEST['requesterstate'];
-    $rzip = $_REQUEST['requesterzip'];
-    $remail = $_REQUEST['requesteremail'];
-    $rmobile = $_REQUEST['requestermobile'];
-    $rassigntech = $_REQUEST['assigntech'];
-    $rdate = $_REQUEST['inputdate'];
-    $sql = "INSERT INTO assignwork_tb (request_id, request_info, request_desc, requester_name, requester_add1, requester_add2, requester_city, requester_state, requester_zip, requester_email, requester_mobile, assign_tech, assign_date) VALUES ('$rid', '$rinfo','$rdesc', '$rname', '$radd1', '$radd2', '$rcity', '$rstate', '$rzip', '$remail', '$rmobile', '$rassigntech', '$rdate')";
-    if($conn->query($sql) == TRUE){
+    $req_id = $_REQUEST['request_id'];
+    $req_info = $_REQUEST['request_info'];
+    $req_desc = $_REQUEST['request_desc'];
+    $req_name = $_REQUEST['requester_name'];
+    $req_add1 = $_REQUEST['requester_add1'];
+    $req_add2 = $_REQUEST['requester_add2'];
+    $req_city = $_REQUEST['requester_city'];
+    $req_state = $_REQUEST['requester_state'];
+    $req_pin = $_REQUEST['requester_pin'];
+    $req_email = $_REQUEST['requester_email'];
+    $req_mobile = $_REQUEST['requester_mobile'];
+    $assigntech = $_REQUEST['assigntech'];
+    $req_date = $_REQUEST['assigndate'];
+    $sql = "INSERT INTO tbl_assignwork (request_id, request_info, request_desc, requester_name, requester_add1, requester_add2, requester_city, requester_state, requester_zip, requester_email, requester_mobile, assign_tech, assign_date) VALUES ('$req_id', '$req_info','$req_desc', '$req_name', '$req_add1', '$req_add2', '$req_city', '$req_state', '$req_pin', '$req_email', '$req_mobile', '$assigntech', '$req_date')";
+    if(mysqli_query($conn,$sql) == TRUE){
      // below msg display on form submit success
      $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Work Assigned Successfully </div>';
     } else {
@@ -61,45 +64,45 @@ if(isset($_SESSION['is_adminlogin'])){
     </div>
     <div class="form-group">
       <label for="requestdesc">Description</label>
-      <input type="text" class="form-control" id="requestdesc" name="requestdesc" value="<?php if(isset($row['request_desc'])) { echo $row['request_desc']; } ?>">
+      <input type="text" class="form-control" id="requestdesc" name="request_desc" value="<?php if(isset($row['request_desc'])) { echo $row['request_desc']; } ?>">
     </div>
     <div class="form-group">
       <label for="requestername">Name</label>
-      <input type="text" class="form-control" id="requestername" name="requestername" value="<?php if(isset($row['requester_name'])) { echo $row['requester_name']; } ?>">
+      <input type="text" class="form-control" id="requestername" name="requester_name" value="<?php if(isset($row['requester_name'])) { echo $row['requester_name']; } ?>">
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="address1">Address Line 1</label>
-        <input type="text" class="form-control" id="address1" name="address1" value="<?php if(isset($row['requester_add1'])) { echo $row['requester_add1']; } ?>">
+        <input type="text" class="form-control" id="address1" name="requester_add1" value="<?php if(isset($row['requester_add1'])) { echo $row['requester_add1']; } ?>">
       </div>
       <div class="form-group col-md-6">
         <label for="address2">Address Line 2</label>
-        <input type="text" class="form-control" id="address2" name="address2" value="<?php if(isset($row['requester_add2'])) {echo $row['requester_add2']; }?>">
+        <input type="text" class="form-control" id="address2" name="requester_add2" value="<?php if(isset($row['requester_add2'])) {echo $row['requester_add2']; }?>">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="requestercity">City</label>
-        <input type="text" class="form-control" id="requestercity" name="requestercity" value="<?php if(isset($row['requester_city'])) {echo $row['requester_city']; }?>">
+        <input type="text" class="form-control" id="requestercity" name="requester_city" value="<?php if(isset($row['requester_city'])) {echo $row['requester_city']; }?>">
       </div>
       <div class="form-group col-md-4">
         <label for="requesterstate">State</label>
-        <input type="text" class="form-control" id="requesterstate" name="requesterstate" value="<?php if(isset($row['requester_state'])) { echo $row['requester_state']; } ?>">
+        <input type="text" class="form-control" id="requesterstate" name="requester_state" value="<?php if(isset($row['requester_state'])) { echo $row['requester_state']; } ?>">
       </div>
       <div class="form-group col-md-4">
-        <label for="requesterzip">Zip</label>
-        <input type="text" class="form-control" id="requesterzip" name="requesterzip" value="<?php if(isset($row['requester_zip'])) { echo $row['requester_zip']; } ?>"
+        <label for="requesterzip">Pin</label>
+        <input type="text" class="form-control" id="requesterpin" name="requester_pin" value="<?php if(isset($row['requester_pin'])) { echo $row['requester_pin']; } ?>"
           onkeypress="isInputNumber(event)">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-8">
         <label for="requesteremail">Email</label>
-        <input type="email" class="form-control" id="requesteremail" name="requesteremail" value="<?php if(isset($row['requester_email'])) {echo $row['requester_email']; }?>">
+        <input type="email" class="form-control" id="requesteremail" name="requester_email" value="<?php if(isset($row['requester_email'])) {echo $row['requester_email']; }?>">
       </div>
       <div class="form-group col-md-4">
         <label for="requestermobile">Mobile</label>
-        <input type="text" class="form-control" id="requestermobile" name="requestermobile" value="<?php if(isset($row['requester_mobile'])) {echo $row['requester_mobile']; }?>"
+        <input type="text" class="form-control" id="requestermobile" name="requester_mobile" value="<?php if(isset($row['requester_mobile'])) {echo $row['requester_mobile']; }?>"
           onkeypress="isInputNumber(event)">
       </div>
     </div>
@@ -110,7 +113,7 @@ if(isset($_SESSION['is_adminlogin'])){
       </div>
       <div class="form-group col-md-6">
         <label for="inputDate">Date</label>
-        <input type="date" class="form-control" id="inputDate" name="inputdate">
+        <input type="date" class="form-control" id="inputDate" name="assigndate">
       </div>
     </div>
     <div class="float-right">

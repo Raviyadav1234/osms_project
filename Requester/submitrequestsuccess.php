@@ -1,17 +1,18 @@
 <?php
 define('TITLE', 'Success');
-include('includes/header.php'); 
-include('../dbConnection.php');
+require_once __DIR__.'/includes/header.php';
+require_once '../dbConnection.php';
+
 session_start();
 if($_SESSION['is_login']){
- $rEmail = $_SESSION['rEmail'];
+ $u_email = $_SESSION['u_email'];
 } else {
  echo "<script> location.href='RequesterLogin.php'; </script>";
 }
-$sql = "SELECT * FROM submitrequest_tb WHERE request_id = {$_SESSION['myid']}";
-$result = $conn->query($sql);
-if($result->num_rows == 1){
- $row = $result->fetch_assoc();
+$sql = "SELECT * FROM tbl_submitrequest WHERE request_id = {$_SESSION['myid']}";
+$result = mysqli_query($conn,$sql);
+if(mysqli_num_rows($result) == 1){
+ $row = mysqli_fetch_assoc($result);
  echo "<div class='ml-5 mt-5'>
  <table class='table'>
   <tbody>
@@ -52,5 +53,5 @@ if($result->num_rows == 1){
 
 <?php
 include('includes/footer.php'); 
-$conn->close();
+mysqli_close($conn);
 ?>

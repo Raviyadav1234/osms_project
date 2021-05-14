@@ -1,27 +1,28 @@
 <?php
 define('TITLE', 'Dashboard');
 define('PAGE', 'dashboard');
-include('includes/header.php'); 
-include('../dbConnection.php');
+require_once __DIR__.'/includes/header.php';
+require_once '../dbConnection.php';
+
 session_start();
  if(isset($_SESSION['is_adminlogin'])){
   $aEmail = $_SESSION['aEmail'];
  } else {
   echo "<script> location.href='login.php'; </script>";
  }
- $sql = "SELECT max(request_id) FROM submitrequest_tb";
- $result = $conn->query($sql);
+ $sql = "SELECT max(request_id) FROM tbl_submitrequest";
+ $result = mysqli_query($conn,$sql);
  $row = mysqli_fetch_row($result);
  $submitrequest = $row[0];
 
- $sql = "SELECT max(request_id) FROM assignwork_tb";
- $result = $conn->query($sql);
+ $sql = "SELECT max(request_id) FROM tbl_assignwork";
+ $result = mysqli_query($conn,$sql);
  $row = mysqli_fetch_row($result);
  $assignwork = $row[0];
 
- $sql = "SELECT * FROM technician_tb";
- $result = $conn->query($sql);
- $totaltech = $result->num_rows;
+ $sql = "SELECT * FROM tbl_technician";
+ $result = mysqli_query($conn,$sql);
+ $totaltech = mysqli_num_rows($result);
 
 ?>
 <div class="col-sm-9 col-md-10">
@@ -64,9 +65,9 @@ session_start();
     <!--Table-->
     <p class=" bg-dark text-white p-2">List of Requesters</p>
     <?php
-    $sql = "SELECT * FROM requesterlogin_tb";
-    $result = $conn->query($sql);
-    if($result->num_rows > 0){
+    $sql = "SELECT * FROM tbl_userlogin";
+    $result = mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result) > 0){
  echo '<table class="table">
   <thead>
    <tr>
@@ -76,11 +77,11 @@ session_start();
    </tr>
   </thead>
   <tbody>';
-  while($row = $result->fetch_assoc()){
+  while($row = mysqli_fetch_assoc($result)){
    echo '<tr>';
-    echo '<th scope="row">'.$row["r_login_id"].'</th>';
-    echo '<td>'. $row["r_name"].'</td>';
-    echo '<td>'.$row["r_email"].'</td>';
+    echo '<th scope="row">'.$row["user_id"].'</th>';
+    echo '<td>'. $row["user_name"].'</td>';
+    echo '<td>'.$row["user_email"].'</td>';
   }
  echo '</tbody>
  </table>';
