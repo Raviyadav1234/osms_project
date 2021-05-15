@@ -23,7 +23,7 @@ if($_SESSION['is_login']){
     $sql = "SELECT * FROM assignwork_tb WHERE request_id = {$_REQUEST['checkid']}";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    if(($row['request_id']) == $_REQUEST['checkid']){ ?>
+    if((@$row['request_id']) == @$_REQUEST['checkid']){ ?>
   <h3 class="text-center mt-5">Assigned Work Details</h3>
   <table class="table table-bordered">
     <tbody>
@@ -101,7 +101,9 @@ if($_SESSION['is_login']){
       </tr>
       <tr>
         <td>Technician Name</td>
-        <td>Zahir Khan</td>
+        <td>
+          <?php if(isset($row['assign_tech'])) {echo $row['assign_tech']; } ?>
+        </td>
       </tr>
       <tr>
         <td>Customer Sign</td>
@@ -115,7 +117,7 @@ if($_SESSION['is_login']){
   </table>
   <div class="text-center">
     <form class="d-print-none d-inline mr-3"><input class="btn btn-danger" type="submit" value="Print" onClick="window.print()"></form>
-    <form class="d-print-none d-inline" action="work.php"><input class="btn btn-secondary" type="submit" value="Close"></form>
+    <form class="d-print-none d-inline" action="CheckStatus.php"><input class="btn btn-secondary" type="submit" value="Close"></form>
   </div>
   <?php } else {
       echo '<div class="alert alert-dark mt-4" role="alert">
