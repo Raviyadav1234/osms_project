@@ -56,7 +56,7 @@ if(isset($_REQUEST['delete'])){
 ?>
 </div>
 </div>
-<div><a class="btn btn-danger box" href="insertreq.php"><i class="fas fa-plus fa-2x"></i></a>
+<div><a class="btn btn-success box" href="insertreq.php"><i class="fas fa-plus fa-2x"></i></a>
 </div>
 </div>
 <?php

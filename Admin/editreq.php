@@ -58,8 +58,8 @@ session_start();
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-danger" id="req_update" name="requpdate">Update</button>
-      <a href="requester.php" class="btn btn-secondary">Close</a>
+      <button type="submit" class="btn btn-outline-success" id="req_update" name="requpdate">Update</button>
+      <a href="requester.php" class="btn btn-outline-secondary">Close</a>
     </div>
     <?php if(isset($msg)) {echo $msg; } ?>
   </form>

@@ -75,7 +75,7 @@ require_once '../dbConnection.php';
       </form>
 
       <div class="row">
-        <div class="class-sm-3 ml-3"><a class="btn btn-info mt-3 shadow-sm font-weight-bold" href="RequesterLogin.php">Continue with Login</a></div>
+        <div class="class-sm-3 ml-3"><a class="btn btn-info mt-3 shadow-sm font-weight-bold" href="userlogin.php">Continue with Login</a></div>
 
         <div class="class-sm-3 mt-4 ml-3">OR</div>
        

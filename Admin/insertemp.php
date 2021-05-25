@@ -52,8 +52,8 @@ if(isset($_REQUEST['emp_submit'])){
       <input type="email" class="form-control" id="empEmail" name="emp_email">
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-danger" id="empsubmit" name="emp_submit">Submit</button>
-      <a href="technician.php" class="btn btn-secondary">Close</a>
+      <button type="submit" class="btn btn-outline-success" id="empsubmit" name="emp_submit">Submit</button>
+      <a href="technician.php" class="btn btn-outline-secondary">Close</a>
     </div>
     <?php if(isset($msg)) {echo $msg; } ?>
   </form>

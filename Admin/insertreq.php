@@ -47,8 +47,8 @@ if(isset($_REQUEST['req_submit'])){
       <input type="password" class="form-control" id="r_password" name="user_password">
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-danger" id="reqsubmit" name="req_submit">Submit</button>
-      <a href="requester.php" class="btn btn-secondary">Close</a>
+      <button type="submit" class="btn btn-outline-success" id="reqsubmit" name="req_submit">Submit</button>
+      <a href="requester.php" class="btn btn-outline-secondary">Close</a>
     </div>
     <?php if(isset($msg)) {echo $msg; } ?>
   </form>

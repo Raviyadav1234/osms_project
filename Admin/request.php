@@ -27,7 +27,7 @@ session_start();
    echo '<p class="card-text">' . $row['request_desc'] . '</p>';
    echo '<p class="card-text">Request Date: ' . $row['request_date'] . '</p>';
    echo '<div class="float-right">';
-   echo '<form action="" method="POST"> <input type="hidden" name="id" value='. $row["request_id"] .'><input type="submit" class="btn btn-danger mr-3" name="view" value="View"><input type="submit" class="btn btn-secondary" name="close" value="Close"></form>';
+   echo '<form action="" method="POST"> <input type="hidden" name="id" value='. $row["request_id"] .'><input type="submit" class="btn btn-outline-success mr-3" name="view" value="View"><input type="submit" class="btn btn-outline-secondary" name="close" value="Close"></form>';
    echo '</div>' ;
    echo '</div>' ;
    echo'</div>';

@@ -94,8 +94,8 @@ session_start();
       <input type="date" class="form-control" id="inputDate" name="selldate">
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-danger" id="psubmit" name="psubmit">Submit</button>
-      <a href="assets.php" class="btn btn-secondary">Close</a>
+      <button type="submit" class="btn btn-outline-success" id="psubmit" name="psubmit">Submit</button>
+      <a href="assets.php" class="btn btn-outline-secondary">Close</a>
     </div>
     <?php if(isset($msg)) {echo $msg; } ?>
   </form>

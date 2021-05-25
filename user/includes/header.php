@@ -21,7 +21,7 @@
 <body>
  <!-- Top Navbar -->
  <nav class="navbar navbar-dark fixed-top bg-secondary flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="RequesterProfile.php"><img src="../images/logo.png"></a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="userprofile.php"><img src="../images/logo.png"></a>
  </nav>
 
  <!-- Side Bar -->
@@ -31,7 +31,7 @@
     <div class="sidebar-sticky">
      <ul class="nav flex-column">
       <li class="nav-item">
-       <a class="nav-link <?php if(PAGE == 'RequesterProfile') { echo 'active'; } ?>" href="RequesterProfile.php">
+       <a class="nav-link <?php if(PAGE == 'userprofile') { echo 'active'; } ?>" href="userprofile.php">
         <i class="fas fa-user"></i>
         Profile <span class="sr-only">(current)</span>
        </a>
@@ -49,7 +49,7 @@
        </a>
       </li>
       <li class="nav-item">
-       <a class="nav-link <?php if(PAGE == 'Requesterchangepass') { echo 'active'; } ?>" href="Requesterchangepass.php">
+       <a class="nav-link <?php if(PAGE == 'userchangepass') { echo 'active'; } ?>" href="userchangepass.php">
         <i class="fas fa-key"></i>
         Change Password
        </a>

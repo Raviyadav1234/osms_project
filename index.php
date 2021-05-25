@@ -46,8 +46,8 @@
 
         <li class="nav-item ml-4"><a href="#contact" class="nav-link">Contact</a></li>
         
-        <li class="nav-item ml-4"><a href="Requester/userregistration.php" class="nav-link">Registration</a></li>
-        <li class="nav-item ml-4"><a href="Requester/RequesterLogin.php" class="nav-link">Login</a></li>
+        <li class="nav-item ml-4"><a href="user/userregistration.php" class="nav-link">Registration</a></li>
+        <li class="nav-item ml-4"><a href="user/userlogin.php" class="nav-link">Login</a></li>
         
       </ul>
     </div>
@@ -56,14 +56,6 @@
   <!-- Start Header Jumbotron-->
  
     <header>
-   <!--  <div class="myclass mainHeading">
-      <h1 class="text-uppercase text-danger font-weight-bold">Welcome to OSMS</h1>
-      <p class="font-italic">Customer's Happiness is our Aim</p>
-      <a href="Requester/RequesterLogin.php" class="btn btn-success mr-4">Login</a>
-      <a href="#registration" class="btn btn-danger mr-4">Sign Up</a>
-    </div> -->
-
-
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -78,8 +70,8 @@
 
       <div class="carousel-caption d-none d-md-block">
     <a href="index.php"><p class="desc" style=" font-size: 80px;">Home</p></a>
-    <h5>nv;jvdivdncnscnsci</h5>
-    <p>CSvdfxkn;nknkn</p>
+    <h5>This is home page</h5>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
     </div>
     </div>
 
@@ -87,8 +79,8 @@
       <img class="d-block w-100" src="images/slide2.jpg" alt="Second slide">
       <div class="carousel-caption d-none d-md-block">
         <a href="#Contact"><p class="desc" style=" font-size: 80px;">Contact</p></a>
-    <h5>nv;jvdivdncnscnsci</h5>
-    <p>CSvdfxkn;nknkn</p>
+    <h5>This is contact page</h5>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
     </div>
     </div>
 
@@ -96,26 +88,26 @@
       <img class="d-block w-100" src="images/slide3.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block">
         <a href="#Services"><p class="desc" style=" font-size: 80px;">Services</p></a>
-    <h5>nv;jvdivdncnscnsci</h5>
-    <p>CSvdfxkn;nknkn</p>
+    <h5>This is services page</h5>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
     </div>
     </div>
 
     <div class="carousel-item">
       <img class="d-block w-100" src="images/slide4.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block">
-    <a href="Requester/userregistration.php"><p class="desc" style=" font-size: 80px;">Register</p></a>
-    <h5>nv;jvdivdncnscnsci</h5>
-    <p>CSvdfxkn;nknkn</p>
+    <a href="user/userregistration.php"><p class="desc" style=" font-size: 80px;">Register</p></a>
+    <h5>This is register page</h5>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
     </div>
     </div>
 
     <div class="carousel-item">
       <img class="d-block w-100" src="images/slide5.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block">
-        <a href="Requester/RequesterLogin.php"><p class="desc" style=" font-size: 80px;">Login</p></a>
-    <h5>nv;jvdivdncnscnsci</h5>
-    <p>CSvdfxkn;nknkn</p>
+        <a href="user/userlogin.php"><p class="desc" style=" font-size: 80px;">Login</p></a>
+    <h5>This is login page</h5>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
     </div>
     </div>
 
@@ -231,22 +223,9 @@
       <?php include('contactform.php'); ?>
       <!-- End Contact Us 1st Column -->
 
-      <div class="col-md-4 text-center">
+      <div class="col-sm-4 text-center">
         <!-- Start Contact Us 2nd Column-->
-        <strong>Headquarter:</strong> <br>
-        O.S.M.S. Pvt. Ltd., <br>
-        Sector-41, Noida <br>
-        Uttar Pradesh - 110096 <br>
-        Phone: +91-7982600726 <br>
-        <a href="#" target="_blank">www.osms.com</a> <br>
-
-        <br><br>
-        <strong>Lucknow Branch:</strong> <br>
-        O.S.M.S. Pvt. Ltd., <br>
-        Vikas Nagar, Lucknow <br>
-        Lucknow - 266001 <br>
-        Phone: +91-7982600726 <br>
-        <a href="#" target="_blank">www.osms.com</a> <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.8316138986465!2d77.3535236144058!3d28.57481869344297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5961f589b79%3A0x830d4e4085f76372!2sNoida%20City%20Center%20Metro%20Parking!5e0!3m2!1sen!2sin!4v1621920293089!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div> <!-- End Contact Us 2nd Column-->
     </div> <!-- End Contact Us Row-->
   </div> <!-- End Contact Us Container-->
@@ -262,20 +241,21 @@
 <!--headin5_amrc-->
 <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 <p><i class="fa fa-location-arrow"></i>Sector-41, Noida, Uttar Pradesh  </p>
-<p><i class="fa fa-phone"></i>  +91-7982600726 <br>&nbsp;&nbsp;&nbsp;&nbsp; +91-9616255454  </p>
-<p><i class="fa fa-envelope"></i> raviyadav2017sln@gmail.com  </p>
+<p><i class="fa fa-phone"></i> <a href="tel:+91-7982600726" class="color"> +91-7982600726</a><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+  <a href="tel:+91-9616255454" class="color">+91-9616255454</a></p>
+<p><i class="fa fa-envelope"> </i><a href="mailto:raviyadav2017sln@gmail.com" class="color"> raviyadav2017sln@gmail.com </a> </p>
 </div>
 
 <div class=" col-sm-3">
 <h4 style="color: white; margin-left: 38px; " class="mt-4 mb-3">Quick links</h4>
 <!--headin5_amrc-->
 <ul style=" list-style-type:none; " class="">
-<li><a class="color" href="http://webenlance.com">Image Rectoucing</a></li>
-<li><a class="color" href="http://webenlance.com">Clipping Path</a></li>
-<li><a class="color" href="http://webenlance.com">Hollow Man Montage</a></li>
-<li><a class="color" href="http://webenlance.com">Ebay & Amazon</a></li>
-<li><a class="color" href="http://webenlance.com">Hair Masking/Clipping</a></li>
-<li><a class="color" href="http://webenlance.com">Image Cropping</a></li>
+<li><a class="color" href="">Image Rectoucing</a></li>
+<li><a class="color" href="">Clipping Path</a></li>
+<li><a class="color" href="">Hollow Man Montage</a></li>
+<li><a class="color" href="">Ebay & Amazon</a></li>
+<li><a class="color" href="">Hair Masking/Clipping</a></li>
+<li><a class="color" href="">Image Cropping</a></li>
 </ul>
 <!--footer_ul_amrc ends here-->
 </div>
@@ -285,12 +265,12 @@
 <h4 style="color: white;margin-left: 38px;" class="mt-4 mb-3">Quick links</h4>
 <!--headin5_amrc-->
 <ul style="list-style-type: none; " class="">
-<li><a class="color" href="http://webenlance.com">Remove Background</a></li>
-<li><a class="color" href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
-<li><a class="color" href="http://webenlance.com">Logo Design</a></li>
-<li><a class="color" href="http://webenlance.com">Vectorization</a></li>
-<li><a class="color" href="http://webenlance.com">Hair Masking/Clipping</a></li>
-<li><a class="color" href="http://webenlance.com">Image Cropping</a></li>
+<li><a class="color" href="">Remove Background</a></li>
+<li><a class="color" href="">Shadows & Mirror Reflection</a></li>
+<li><a class="color" href="">Logo Design</a></li>
+<li><a class="color" href="">Vectorization</a></li>
+<li><a class="color" href="">Hair Masking/Clipping</a></li>
+<li><a class="color" href="">Image Cropping</a></li>
 </ul>
 <!--footer_ul_amrc ends here-->
 </div>
@@ -318,8 +298,8 @@
 <li><a href="#services">Services</a></li>
 <li><a href="#customer">Gallery</a></li>
 <li><a href="#contact">Contact</a></li>
-<li><a href="Requester/userregistration.php">Registration</a></li>
-<li><a href="Requester/RequesterLogin.php">Login</a></li>
+<li><a href="user/userregistration.php">Registration</a></li>
+<li><a href="user/userLogin.php">Login</a></li>
 </ul>
 <!--foote_bottom_ul_amrc ends here-->
 <p class="text-center">Copyright @2021 | Designed by Ravi Yadav 

@@ -8,7 +8,7 @@ session_start();
 if($_SESSION['is_login']){
  $u_email = $_SESSION['u_email'];
 } else {
- echo "<script> location.href='RequesterLogin.php'; </script>";
+ echo "<script> location.href='userlogin.php'; </script>";
 }
 if(isset($_POST['submit_request'])){
  // Checking for Empty Fields
@@ -98,8 +98,8 @@ if(isset($_POST['submit_request'])){
       </div>
     </div>
 
-    <button type="submit" class="btn btn-danger" name="submit_request">Submit</button>
-    <button type="reset" class="btn btn-secondary">Reset</button>
+    <button type="submit" class="btn btn-outline-success" name="submit_request">Submit</button>
+    <button type="reset" class="btn btn-outline-secondary">Reset</button>
   </form>
   <!-- below msg display if required fill missing or form submitted success or failed -->
   <?php if(isset($msg)) {echo $msg; } ?>

@@ -62,8 +62,8 @@ if(isset($_REQUEST['product_submit'])){
       <input type="text" class="form-control" id="psellingcost" name="product_sellingcost" onkeypress="isInputNumber(event)">
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-danger" id="psubmit" name="product_submit">Submit</button>
-      <a href="assets.php" class="btn btn-secondary">Close</a>
+      <button type="submit" class="btn btn-outline-success" id="psubmit" name="product_submit">Submit</button>
+      <a href="assets.php" class="btn btn-outline-secondary">Close</a>
     </div>
     <?php if(isset($msg)) {echo $msg; } ?>
   </form>

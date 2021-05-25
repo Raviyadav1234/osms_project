@@ -7,7 +7,7 @@ session_start();
 if($_SESSION['is_login']){
  $u_email = $_SESSION['u_email'];
 } else {
- echo "<script> location.href='RequesterLogin.php'; </script>";
+ echo "<script> location.href='userlogin.php'; </script>";
 }
 $sql = "SELECT * FROM tbl_submitrequest WHERE request_id = {$_SESSION['myid']}";
 $result = mysqli_query($conn,$sql);

@@ -67,7 +67,7 @@ session_start();
   ?>
 </div>
 </div>
-<a class="btn btn-danger box" href="addproduct.php"><i class="fas fa-plus fa-2x"></i></a>
+<a class="btn btn-success box" href="addproduct.php"><i class="fas fa-plus fa-2x"></i></a>
 </div>
 
 <?php

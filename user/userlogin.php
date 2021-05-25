@@ -12,15 +12,15 @@ if(!isset($_SESSION['is_login'])){
       
       $_SESSION['is_login'] = true;
       $_SESSION['u_email'] = $u_email;
-      // Redirecting to RequesterProfile page on Correct Email and Pass
-      echo "<script> location.href='RequesterProfile.php'; </script>";
+      // Redirecting to userprofile page on Correct Email and Pass
+      echo "<script> location.href='userprofile.php'; </script>";
       exit;
     } else {
       $msg = '<div class="alert alert-warning mt-2" role="alert"> Enter Valid Email and Password </div>';
     }
   }
 } else {
-  echo "<script> location.href='RequesterProfile.php'; </script>";
+  echo "<script> location.href='userprofile.php'; </script>";
 }
 ?>
 
@@ -47,13 +47,7 @@ if(!isset($_SESSION['is_login'])){
 </head>
 
 <body>
-  <div class="mb-3 text-center mt-5" style="font-size: 30px;">
-    <i class="fas fa-stethoscope"></i>
-    <span>Online Maintenance Managment System</span>
-  </div>
-  <p class="text-center" style="font-size: 20px;"> <i class="fas fa-user-secret text-danger"></i> <span>Requester
-      Area(Demo)</span>
-  </p>
+  <h1 class="text-center mt-5">Login Here</h1>
   <div class="container-fluid mb-5">
     <div class="row justify-content-center custom-margin">
       <div class="col-sm-6 col-md-4">
@@ -61,8 +55,6 @@ if(!isset($_SESSION['is_login'])){
           <div class="form-group">
             <i class="fas fa-user"></i><label for="email" class="pl-2 font-weight-bold">Email</label><input type="email"
               class="form-control" placeholder="Email" name="u_email">
-            <!--Add text-white below if want text color white-->
-            <small class="form-text">We'll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
             <i class="fas fa-key"></i><label for="pass" class="pl-2 font-weight-bold">Password</label><input type="password"

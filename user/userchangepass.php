@@ -1,6 +1,6 @@
 <?php
 define('TITLE', 'Change Password');
-define('PAGE', 'Requesterchangepass');
+define('PAGE', 'userchangepass');
 require_once __DIR__.'/includes/header.php';
 require_once '../dbConnection.php';
 
@@ -8,7 +8,7 @@ session_start();
 if($_SESSION['is_login']){
  $u_email = $_SESSION['u_email'];
 } else {
- echo "<script> location.href='RequesterLogin.php'; </script>";
+ echo "<script> location.href='userlogin.php'; </script>";
 }
 
  $u_email = $_SESSION['u_email'];
@@ -46,8 +46,8 @@ if($_SESSION['is_login']){
           <label for="inputnewpassword">New Password</label>
           <input type="password" class="form-control" id="inputnewpassword" placeholder="New Password" name="u_password">
         </div>
-        <button type="submit" class="btn btn-danger mr-4 mt-4" name="pass_update">Update</button>
-        <button type="reset" class="btn btn-secondary mt-4">Reset</button>
+        <button type="submit" class="btn btn-outline-success mr-4 mt-4" name="pass_update">Update</button>
+        <button type="reset" class="btn btn-outline-secondary mt-4">Reset</button>
         <?php if(isset($passmsg)) {echo $passmsg; } ?>
       </form>
 

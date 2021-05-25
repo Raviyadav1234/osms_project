@@ -82,8 +82,8 @@ session_start();
         onkeypress="isInputNumber(event)">
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-danger" id="pupdate" name="product_update">Update</button>
-      <a href="assets.php" class="btn btn-secondary">Close</a>
+      <button type="submit" class="btn btn-outline-success" id="pupdate" name="product_update">Update</button>
+      <a href="assets.php" class="btn btn-outline-secondary">Close</a>
     </div>
     <?php if(isset($msg)) {echo $msg; } ?>
   </form>

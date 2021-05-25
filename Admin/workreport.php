@@ -21,7 +21,7 @@ session_start();
         <input type="date" class="form-control" id="enddate" name="end_date">
       </div>
       <div class="form-group">
-        <input type="submit" class="btn btn-secondary" name="search_submit" value="Search">
+        <input type="submit" class="btn btn-outline-secondary" name="search_submit" value="Search">
       </div>
     </div>
   </form>
@@ -61,7 +61,7 @@ session_start();
       </tr>';
     }
     echo '<tr>
-    <td><form class="d-print-none"><input class="btn btn-danger" type="submit" value="Print" onClick="window.print()"></form></td>
+    <td><form class="d-print-none"><input class="btn btn-outline-success" type="submit" value="Print" onClick="window.print()"></form></td>
   </tr></tbody>
   </table>';
   } else {

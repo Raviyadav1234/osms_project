@@ -67,8 +67,8 @@ session_start();
       <input type="email" class="form-control" id="empEmail" name="emp_email" value="<?php if(isset($row['emp_email'])) {echo $row['emp_email']; }?>">
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-danger" id="empupdate" name="emp_update">Update</button>
-      <a href="technician.php" class="btn btn-secondary">Close</a>
+      <button type="submit" class="btn btn-outline-success" id="empupdate" name="emp_update">Update</button>
+      <a href="technician.php" class="btn btn-outline-secondary">Close</a>
     </div>
     <?php if(isset($msg)) {echo $msg; } ?>
   </form>

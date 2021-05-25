@@ -44,8 +44,8 @@ session_start();
           <label for="inputnewpassword">New Password</label>
           <input type="text" class="form-control" id="inputnewpassword" placeholder="New Password" name="admin_password">
         </div>
-        <button type="submit" class="btn btn-danger mr-4 mt-4" name="pass_update">Update</button>
-        <button type="reset" class="btn btn-secondary mt-4">Reset</button>
+        <button type="submit" class="btn btn-outline-success mr-4 mt-4" name="pass_update">Update</button>
+        <button type="reset" class="btn btn-outline-secondary mt-4">Reset</button>
         <?php if(isset($passmsg)) {echo $passmsg; } ?>
       </form>
     </div>

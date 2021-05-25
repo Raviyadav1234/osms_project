@@ -117,8 +117,8 @@ if(isset($_SESSION['is_adminlogin'])){
       </div>
     </div>
     <div class="float-right">
-      <button type="submit" class="btn btn-success" name="assign">Assign</button>
-      <button type="reset" class="btn btn-secondary">Reset</button>
+      <button type="submit" class="btn btn-outline-success" name="assign">Assign</button>
+      <button type="reset" class="btn btn-outline-secondary">Reset</button>
     </div>
   </form>
   <!-- below msg display if required fill missing or form submitted success or failed -->

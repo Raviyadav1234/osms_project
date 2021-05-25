@@ -45,13 +45,7 @@ if(!isset($_SESSION['is_adminlogin'])){
 </head>
 
 <body>
-  <div class="mb-3 text-center mt-5" style="font-size: 30px;">
-    <i class="fas fa-stethoscope"></i>
-    <span>Online Maintenance Managment System</span>
-  </div>
-  <p class="text-center" style="font-size: 20px;"> <i class="fas fa-user-secret text-danger"></i> <span>Admin
-      Area(Demo)</span>
-  </p>
+  <h1 class="text-center mt-5">Admin Login</h1>
   <div class="container-fluid mb-5">
     <div class="row justify-content-center custom-margin">
       <div class="col-sm-6 col-md-4">

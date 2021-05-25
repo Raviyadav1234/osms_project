@@ -1,6 +1,6 @@
 <?php
-define('TITLE', 'Requester Profile');
-define('PAGE', 'RequesterProfile');
+define('TITLE', 'User Profile');
+define('PAGE', 'userprofile');
 require_once __DIR__.'/includes/header.php';
 require_once '../dbConnection.php';
 
@@ -8,7 +8,7 @@ require_once '../dbConnection.php';
  if($_SESSION['is_login']){
   $u_email = $_SESSION['u_email'];
  } else {
-  echo "<script> location.href='RequesterLogin.php'; </script>";
+  echo "<script> location.href='userlogin.php'; </script>";
  }
 
  $sql = "SELECT * FROM tbl_userlogin WHERE user_email='$u_email'";
@@ -45,7 +45,7 @@ $result = mysqli_query($conn,$sql);
       <label for="inputName">Name</label>
       <input type="text" class="form-control" id="inputName" name="u_name" value=" <?php echo $u_name ?>">
     </div>
-    <button type="submit" class="btn btn-danger" name="name_update">Update</button>
+    <button type="submit" class="btn btn-outline-success" name="name_update">Update</button>
     <?php if(isset($passmsg)) {echo $passmsg; } ?>
   </form>
 </div>

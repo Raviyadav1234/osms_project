@@ -8,7 +8,7 @@ session_start();
 if($_SESSION['is_login']){
  $u_email = $_SESSION['u_email'];
 } else {
- echo "<script> location.href='RequesterLogin.php'; </script>";
+ echo "<script> location.href='userlogin.php'; </script>";
 }
 ?>
 <div class="col-sm-6 mt-5  mx-3">
@@ -17,7 +17,7 @@ if($_SESSION['is_login']){
       <label for="checkid">Enter Request ID: </label>
       <input type="text" class="form-control ml-3" id="checkid" name="checkid" onkeypress="isInputNumber(event)">
     </div>
-    <button type="submit" class="btn btn-danger">Search</button>
+    <button type="submit" class="btn btn-outline-success">Search</button>
   </form>
   <?php
   if(isset($_REQUEST['checkid'])){
