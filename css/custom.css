@@ -65,15 +65,6 @@ fi-color:hover {
 
 
 /*CSS for footer*/
-.footer_menu {
-  list-style-type:none;
-  padding:0px;
-  display:table;
-  margin: 10px auto;
-
-}
-.footer_menu li { display:inline;}
-.footer_menu li a { color:#999; margin:0 12px;}
 
 .social_footer_ul {
  display:table;

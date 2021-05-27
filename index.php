@@ -292,15 +292,6 @@
 
 
 <div class="container">
-<ul class="footer_menu">
-<li><a href="index.php">Home</a></li>
-<li><a href="#about_us">About us</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#customer">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><a href="user/userregistration.php">Registration</a></li>
-<li><a href="user/userLogin.php">Login</a></li>
-</ul>
 <!--foote_bottom_ul_amrc ends here-->
 <p class="text-center">Copyright @2021 | Designed by Ravi Yadav 
 
