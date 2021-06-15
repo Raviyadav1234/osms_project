@@ -8,7 +8,6 @@ require __DIR__.'/config/dbConnection.php';
       $registermsg = '<div class="alert alert-warning mt-2" role="alert"> All Fields are Required </div>';
       
     }else{
-      require __DIR__.'/config/dbConnection.php';
       $sql = "SELECT user_email FROM tbl_userlogin WHERE user_email ='".$_POST['u_email']."'";
       $result = mysqli_query($conn,$sql);
       if(mysqli_num_rows($result)==1){
