@@ -1,23 +1,25 @@
 <?php
-require_once '../dbConnection.php';
+
+require __DIR__.'/config/dbConnection.php';
 
   if(isset($_POST['u_signup'])){
     // Checking for Empty Fields
     if(($_POST['u_name'] == "") || ($_POST['u_email'] == "") || ($_POST['u_password'] == "")){
       $registermsg = '<div class="alert alert-warning mt-2" role="alert"> All Fields are Required </div>';
-      $u_email = $_POST['u_email'];
-    } else {
-      $sql = "SELECT user_email FROM tbl_userlogin WHERE user_email = {$u_email}";
+      
+    }else{
+      require __DIR__.'/config/dbConnection.php';
+      $sql = "SELECT user_email FROM tbl_userlogin WHERE user_email ='".$_POST['u_email']."'";
       $result = mysqli_query($conn,$sql);
-      if(mysqli_num_rows($result) == 1){
+      if(mysqli_num_rows($result)==1){
         $registermsg = '<div class="alert alert-warning mt-2" role="alert"> Email ID Already Registered </div>';
       } else {
         // Assigning User Values to Variable
         $u_name = $_POST['u_name'];
         $u_email = $_POST['u_email'];
         $u_password = $_POST['u_password'];
-        $sql = "INSERT INTO tbl_userlogin(user_name, user_email, user_password) VALUES ('$u_name','$u_email', '$u_password')";
-        if(mysqli_query($conn,$sql) == TRUE){
+        $sql1 = "INSERT INTO tbl_userlogin(user_name, user_email, user_password) VALUES ('$u_name','$u_email', '$u_password')";
+        if(mysqli_query($conn,$sql1) == TRUE){
           $registermsg = '<div class="alert alert-success mt-2" role="alert"> Account Succefully Created </div>';
         } else {
           $registermsg = '<div class="alert alert-danger mt-2" role="alert"> Unable to Create Account </div>';
@@ -46,7 +48,7 @@ require_once '../dbConnection.php';
          margin-top: 8vh;
       }
    </style>
-  <title>Login</title>
+  <title>Register</title>
 </head>
 
 <body>
@@ -55,6 +57,7 @@ require_once '../dbConnection.php';
   <h2 class="text-center">Register Here</h2>
   <div class="row mt-4 mb-4">
     <div class="col-sm-6 offset-md-3">
+      <?php if(isset($registermsg)) {echo $registermsg; } ?>
       <form action="" class="shadow-lg p-4" method="POST">
         <div class="form-group">
           <i class="fas fa-user"></i><label for="name" class="pl-2 font-weight-bold">Name</label><input type="text"
@@ -66,12 +69,12 @@ require_once '../dbConnection.php';
           <small>we never share your email with anyone.</small>
         </div>
         <div class="form-group">
-          <i class="fas fa-key"></i><label for="pass" class="pl-2 font-weight-bold">New
+          <i class="fas fa-key"></i><label for="pass" class="pl-2 font-weight-bold">
             Password</label><input type="password" class="form-control" placeholder="Password" name="u_password">
         </div>
         <button type="submit" class="btn btn-outline-success mt-5 btn-block shadow-sm font-weight-bold" name="u_signup">Sign Up</button>
         <i style="font-size: 12px;">after sign-up you will be able to access all services.</i>
-        <?php if(isset($registermsg)) {echo $registermsg; } ?>
+        
       </form>
 
       <div class="row">

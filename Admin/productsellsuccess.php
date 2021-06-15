@@ -2,7 +2,7 @@
 session_start();
 define('TITLE', 'Success');
 require_once __DIR__.'/includes/header.php';
-require_once '../dbConnection.php';
+require_once __DIR__.'/config/dbConnection.php';
 
  if(isset($_SESSION['is_adminlogin'])){
   $aEmail = $_SESSION['aEmail'];

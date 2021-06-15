@@ -13,7 +13,7 @@ if(isset($_REQUEST['submit'])) {
  $email = $_REQUEST['email'];
  $message = $_REQUEST['message'];
 
- $mailTo = "contact@geekyshows.com";
+ $mailTo = "raviyadav2017sln@gmail.com";
  $headers = "From: ". $email;
  $txt = "You have received an email from ". $name. ".\n\n".$message;
  mail($mailTo, $subject, $txt, $headers);

@@ -2,7 +2,7 @@
 define('TITLE', 'Update Requester');
 define('PAGE', 'requesters');
 require_once __DIR__.'/includes/header.php';
-require_once '../dbConnection.php';
+require_once __DIR__.'/config/dbConnection.php';
 
 session_start();
  if(isset($_SESSION['is_adminlogin'])){

@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/includes/header.php';
-require_once '../dbConnection.php';
+require_once __DIR__.'/config/dbConnection.php';
 
 if(session_id() == '') {
   session_start();

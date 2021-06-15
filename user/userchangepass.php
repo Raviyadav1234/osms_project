@@ -2,7 +2,7 @@
 define('TITLE', 'Change Password');
 define('PAGE', 'userchangepass');
 require_once __DIR__.'/includes/header.php';
-require_once '../dbConnection.php';
+require_once __DIR__.'/config/dbConnection.php';
 
 session_start();
 if($_SESSION['is_login']){

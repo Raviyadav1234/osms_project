@@ -2,7 +2,7 @@
 define('TITLE', 'User Profile');
 define('PAGE', 'userprofile');
 require_once __DIR__.'/includes/header.php';
-require_once '../dbConnection.php';
+require __DIR__ .'/config/dbConnection.php';
 
  session_start();
  if($_SESSION['is_login']){
@@ -15,7 +15,7 @@ require_once '../dbConnection.php';
 $result = mysqli_query($conn,$sql);
  if(mysqli_num_rows($result) == 1){
  $row = mysqli_fetch_assoc($result);
- $u_name = $row["user_name"]; 
+ $u_name = $row['user_name']; 
 }
 
  if(isset($_REQUEST['name_update'])){
@@ -24,8 +24,8 @@ $result = mysqli_query($conn,$sql);
    $passmsg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> Fill All Fileds </div>';
   } else {
    $u_name = $_REQUEST["u_name"];
-   $sql = "UPDATE tbl_userlogin SET user_name = '$u_name' WHERE user_email = '$u_email'";
-   if(mysqli_query($conn,$sql) == TRUE){
+   $sql1 = "UPDATE tbl_userlogin SET user_name = '$u_name' WHERE user_email = '$u_email'";
+   if(mysqli_query($conn,$sql1) == TRUE){
    // below msg display on form submit success
    $passmsg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Updated Successfully </div>';
    } else {
@@ -36,17 +36,17 @@ $result = mysqli_query($conn,$sql);
    }
 ?>
 <div class="col-sm-6 mt-5">
+  <?php if(isset($passmsg)) {echo $passmsg; } ?>
   <form class="mx-5" method="POST">
     <div class="form-group">
       <label for="inputEmail">Email</label>
-      <input type="email" class="form-control" id="inputEmail" value=" <?php echo $u_email ?>" readonly>
+      <input type="email" class="form-control" id="inputEmail" value=" <?php if(isset($u_email)) {print($u_email);} ?>" readonly>
     </div>
     <div class="form-group">
       <label for="inputName">Name</label>
-      <input type="text" class="form-control" id="inputName" name="u_name" value=" <?php echo $u_name ?>">
+      <input type="text" class="form-control" id="inputName" name="u_name" value=" <?php if(isset($u_name)) {print($u_name);} ?>">
     </div>
     <button type="submit" class="btn btn-outline-success" name="name_update">Update</button>
-    <?php if(isset($passmsg)) {echo $passmsg; } ?>
   </form>
 </div>
 </div>
